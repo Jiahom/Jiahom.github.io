@@ -62,9 +62,284 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-15483871708141" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/11/Redis/" class="article-date">
+    <a href="/2019/01/25/15483871708141/" class="article-date">
+  <time datetime="2019-01-25T03:32:50.814Z" itemprop="datePublished">2019-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设计模式的总结"><a href="#设计模式的总结" class="headerlink" title="设计模式的总结"></a>设计模式的总结</h1><h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><p>###<a href="https://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html" target="_blank" rel="noopener">https://www.cnblogs.com/java-my-life/archive/2012/05/10/2491891.html</a><br>一个具体的类，类中定义 一个具体去做动作的类和方法（该方法调用具体去做动作的类去实现动作片）<br><img src="media/15483871708141/15483872850231.jpg" alt=""></p>
+<p>Strategy是一个抽象类或者接口，里面有抽象方法需要具体类去实现<br><img src="media/15483871708141/15483873807225.jpg" alt=""></p>
+<p>Context根据传入不同的Strategy实现类，使得contextInterface的实现方式不同。</p>
+<p>#简单工厂模式</p>
+<p>传入具体的 参数对象去构建具体对象（参数可以灵活设定）但是会出现A参数CPU和B参数主板的组合。</p>
+<p>#抽象工厂模式</p>
+<p>传入具体的构造工厂去构建具体对象（内部参数已经在具体的构造工厂里设定好）A工厂只会造出A参数CPU和A参数工厂。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/25/15483871708141/" data-id="cjrc0tffm001ardw1ezdpidu3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15480545394523" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/21/15480545394523/" class="article-date">
+  <time datetime="2019-01-21T07:08:59.452Z" itemprop="datePublished">2019-01-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#<br>上线工作时间</p>
+<p>2019.01.04</p>
+<p>预计开始时间    19:00    </p>
+<p>预计结束时间    19:30    </p>
+<p>模块    功能点    需求说明    影响范围    开发人员    </p>
+<p>Comment<br>朱庇特/墨丘利    店长数据<br>店长数据的分类详情页增加销售额和销售占比的排序</p>
+<p>店长数据<br>陈帅</p>
+<p>已经提交release</p>
+<p>项目说明(jar)    版本    owner    去snapshot    deploy    </p>
+<p>store-data-api    1.7.0    </p>
+<p>项目说明(war)    上线依赖项目    owner    去snapshot    线上发布    打tag    compare    上线分支    改动点    上线批次    Comment<br>store-stock-service    N/A<br>霍国栋</p>
+<p>done    </p>
+<p>release    </p>
+<p>store-data-service    N/A<br>jiahong.wu</p>
+<p>done    </p>
+<p>release    </p>
+<p>store-workflow-service    N/A<br>jiahong.wu</p>
+<p>done    </p>
+<p>release    </p>
+<p>store-data-analysis-web    store-data-service<br>jiahong.wu</p>
+<p>done    </p>
+<p>release    </p>
+<p>mercury-web    store-data-service<br>霍国栋</p>
+<p>done    </p>
+<p>release    </p>
+<p>hq-web    store-data-service<br>霍国栋</p>
+<p>done    </p>
+<p>release    </p>
+<p>配置说明\人员(无请标明无)    项目    owner    进度    备注    </p>
+<p>权限    N/A    </p>
+<p>DDL    </p>
+<p>Lion    N/A    </p>
+<p>功能模块线上环境测试进度    owner    测试进度    备注    备注    </p>
+<p>店长数据<br>陈帅</p>
+<p>DDL</p>
+<p>CREATE TABLE <code>store_sku_check_stock_sku_data_result</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT COMMENT ‘主键id’,<br>  <code>sku_data_id</code> int(11) NOT NULL COMMENT ‘单品分析id’,<br>  <code>sku_result_type</code> int(11) DEFAULT NULL COMMENT ‘单品分析原因’,<br>  <code>sku_result_value</code> varchar(2000) DEFAULT NULL COMMENT ‘单品分析结果’,<br>  <code>valid</code> int(11) DEFAULT NULL COMMENT ‘是否可用’,<br>  <code>create_time</code> datetime NOT NULL COMMENT ‘创建时间’,<br>  <code>update_time</code> datetime NOT NULL COMMENT ‘修改时间’,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8mb4;</p>
+<p>CREATE TABLE <code>store_sku_check_stock_create_info</code> (<br>  <code>id</code> int(11) NOT NULL AUTO_INCREMENT COMMENT ‘主键id’,<br>  <code>create_id</code> int(11) NOT NULL COMMENT ‘盘点分析id’,<br>  <code>check_info_key</code> varchar(255) DEFAULT NULL COMMENT ‘分析类型’,<br>  <code>check_info_value</code> varchar(2000) DEFAULT NULL COMMENT ‘分析原因’,<br>  <code>create_time</code> datetime NOT NULL COMMENT ‘创建时间’,<br>  <code>update_time</code> datetime NOT NULL COMMENT ‘修改时间’,<br>  <code>create_by</code> varchar(45) DEFAULT NULL COMMENT ‘创建人’,<br>  <code>update_by</code> varchar(45) DEFAULT NULL COMMENT ‘更新人’,<br>  PRIMARY KEY (<code>id</code>)<br>) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;</p>
+<p>ALTER TABLE h_sto_analysis.<code>store_sku_check_stock_create</code><br>ADD COLUMN <code>analysis_status</code> INT NULL DEFAULT 10 COMMENT ‘盘点报告提交状态 0未提交 1 提交\n’ AFTER <code>update_time</code>;</p>
+<p>ALTER TABLE h_sto_analysis.<code>store_sku_check_stock_sku_data</code><br>ADD COLUMN <code>final_check_by</code> varchar(45) NULL COMMENT ‘复盘人\n’;</p>
+<p>ALTER TABLE h_sto_analysis.<code>store_sku_check_stock_sku_data</code><br>ADD COLUMN <code>initial_check_by</code> varchar(45) NULL COMMENT ‘初盘人\n’;</p>
+<p>ALTER TABLE h_sto_analysis.<code>store_sku_check_stock_sku_data</code><br>ADD COLUMN <code>final_sale</code> INT NULL COMMENT ‘复盘售卖\n’;</p>
+<p>ALTER TABLE h_sto_analysis.<code>store_sku_check_stock_sku_data</code><br>ADD COLUMN <code>init_sale</code> INT NULL COMMENT ‘初盘售卖\n’;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/21/15480545394523/" data-id="cjrc0tffe0019rdw1cw8hizq3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15475419717626" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/15/15475419717626/" class="article-date">
+  <time datetime="2019-01-15T08:46:11.763Z" itemprop="datePublished">2019-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RocketMQ"><a href="#RocketMQ" class="headerlink" title="RocketMQ"></a>RocketMQ</h1><p>MQ 面试题总结<br><a href="https://segmentfault.com/a/1190000015301449" target="_blank" rel="noopener">https://segmentfault.com/a/1190000015301449</a></p>
+<p>###rocketMQ使用说明</p>
+<p>####名词解释.</p>
+<p>Rocket MQ<br>Producer -  topic - Consumer</p>
+<p>专有名词介绍</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/15/15475419717626/" data-id="cjrc0tffd0018rdw14dbmd6zm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15474349266664" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/14/15474349266664/" class="article-date">
+  <time datetime="2019-01-14T03:02:06.667Z" itemprop="datePublished">2019-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p># </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/14/15474349266664/" data-id="cjrc0tffd0017rdw1dtljiv32" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15474339545317" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/14/15474339545317/" class="article-date">
+  <time datetime="2019-01-14T02:45:54.532Z" itemprop="datePublished">2019-01-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Mybatis"><a href="#Mybatis" class="headerlink" title="Mybatis"></a>Mybatis</h1><p>Mybatis一般和Spring配合开发</p>
+<p>配置文件时，需要扫描Mapper的xml，也需要指定spring一个叫mapper扫描器的去扫描这些xml的所有接口。<br>常见mybatis配置<br><img src="media/15474339545317/15474340219994.jpg" alt=""></p>
+<p><img src="media/15474339545317/15474340396151.jpg" alt=""></p>
+<p>mapper的一些语法说明</p>
+<ol>
+<li><p>#{}实现JDBC类型自动转换，${}不转换（直接拼接上去）</p>
+</li>
+<li><p>数据库表名和PO属性名称不一致的，可以用resultMapper去指定映射，如果PO遵循驼峰，也可以在mybatis中指定开启驼峰类型去自动匹配。</p>
+</li>
+<li><img src="media/15474339545317/15474343105332.jpg" alt=""></li>
+</ol>
+<p>4.<where> 标签相当于 加了个 where 1=1<br>后面的条件需要前缀加上AND</where></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/14/15474339545317/" data-id="cjrc0tffc0016rdw1d8w2rcay" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15471955360413" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/15471955360413/" class="article-date">
+  <time datetime="2019-01-11T08:32:16.041Z" itemprop="datePublished">2019-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h1><p><img src="media/15471955360413/15471962196903.jpg" alt=""></p>
+<p>SpringMVC的配置</p>
+<p>Spring MVC需要在 web.xml中 加入一个 servlet ，并且在servlet中指定配置文件，创建时间，具体配置如下。<br><img src="media/15471955360413/15471976904470.jpg" alt=""></p>
+<h4 id="比较流行的一些MVC工具注解使用"><a href="#比较流行的一些MVC工具注解使用" class="headerlink" title="比较流行的一些MVC工具注解使用"></a>比较流行的一些MVC工具注解使用</h4><p>@RestController<br>相当于Controller+ResponseBody</p>
+<p>@ControllerAdvice<br>全局异常捕获类，配合@ExceptionHandler 可以对Controller层所有异常类进行捕获<br>参考： <a href="https://blog.csdn.net/kinginblue/article/details/70186586" target="_blank" rel="noopener">https://blog.csdn.net/kinginblue/article/details/70186586</a> </p>
+<p>####Spring MVC<br><a href="mvc:annotation-driven" target="_blank" rel="noopener">mvc:annotation-driven</a><br>会自动帮忙注册 处理器映射器和处理器适配器 还有帮忙注册了 json转换器（入参和返回值的Json转换）<br>不会帮忙注册 视图解析器（返回给前端的数据渲染到JSP或者flt文件上用-前后端分离以后基本上用不到）</p>
+<p>####Spring MVC转换器配置<br>不使用<a href="mvc:annotation-driven" target="_blank" rel="noopener">mvc:annotation-driven</a> 注解则需要自己去配置 JSON转换器<br>例如：<br><img src="media/15471955360413/15471979367629.jpg" alt=""><br>写了注解以后也需要配置日期格式转换器，常见日期转换器配置如下</p>
+<p><a href="https://blog.csdn.net/chenleixing/article/details/45156617" target="_blank" rel="noopener">https://blog.csdn.net/chenleixing/article/details/45156617</a> SpringMVC转换器配置（即使配置了转换器也需要让 跟前端指定转换器的转换格式）;<br><img src="media/15471955360413/15471980915888.jpg" alt=""><br>解决日期问题的方法还可以在 日期类型的变量成员上面加上注解指定日期格式<br><img src="media/15471955360413/15471984203361.jpg" alt=""></p>
+<p>####Spring MVC 拦截器配置</p>
+<p>写一个类，实现MVC拦截器的接口，并且在配置中心上把MVC拦截器配置上，配置图如下：<br><img src="media/15471955360413/15471968777164.jpg" alt=""></p>
+<h3 id="一些小陷阱"><a href="#一些小陷阱" class="headerlink" title="一些小陷阱"></a>一些小陷阱</h3><p>坑 1：</p>
+<p>前段Post方式传递过来的Json信息，处理器形参无法直接 与Controller的形参直接映射，必须在形参前加上 @RequestBody</p>
+<p>如果是Get请求则不需要添加（Get请求传递的不是Json格式数据）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/11/15471955360413/" data-id="cjrc0tffb0015rdw1aveki3z4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15471888788864" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/15471888788864/" class="article-date">
+  <time datetime="2019-01-11T06:41:18.887Z" itemprop="datePublished">2019-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><p>&lt;context:component-scan base-package=”com.xx.xx” /&gt;<br><a href="context:annotation-config/" target="_blank" rel="noopener">context:annotation-config/</a><br>&lt;aop:aspectj-autoproxy /&gt; 开启@aspectj的使用，Spring默认不支持这个，需要使用这个声明去开启。</p>
+<p><a href="context:component-scan/" target="_blank" rel="noopener">context:component-scan/</a>不但启用了对类包进行扫描以实施注释驱动 Bean 定义的功能，同时还启用了注释驱动自动注入的功能（即还隐式地在内部注册了 AutowiredAnnotationBeanPostProcessor 和  CommonAnnotationBeanPostProcessor），因此当使用 <a href="context:component-scan/" target="_blank" rel="noopener">context:component-scan/</a> 后，就可以将 <a href="context:annotation-config/" target="_blank" rel="noopener">context:annotation-config/</a> 移除了。</p>
+<p>而<a href="context:annotation-config/" target="_blank" rel="noopener">context:annotation-config/</a> 主要功能是注册了<br>AutowiredAnnotationBeanPostProcessor,<br>CommonAnnotationBeanPostProcessor,<br>PersistenceAnnotationBeanPostProcessor,  RequiredAnnotationBeanPostProcessor</p>
+<p>所以开启了注解扫描基本上可以忽略<a href="context:annotation-config/" target="_blank" rel="noopener">context:annotation-config/</a></p>
+<p>####Spring 的基本配置</p>
+<p>在Tomcat启动时候注册一个监听器， 读取提前在Tomcat上下文中设置的配置地址，就此Spring容器即可启动。<br><img src="media/15471888788864/15471992128826.jpg" alt=""></p>
+<p><img src="media/15471888788864/15471992228269.jpg" alt=""></p>
+<p>####Spring 如何启用注解管理事务<br>注册事务工具<br><img src="media/15471888788864/15474353033913.jpg" alt=""></p>
+<p>开启注解管理事务<br><img src="media/15471888788864/15474353083737.jpg" alt=""></p>
+<p>在需要进行事务操作的类头上顶上@Transactional（只对public 方法有效果）</p>
+<p>存在自调用问题。</p>
+<p>在 Spring 的 AOP 代理下，只有目标方法由外部调用，目标方法才由 Spring 生成的代理对象来管理，这会造成自调用问题。若同一类中的其他没有@Transactional 注解的方法内部调用有@Transactional 注解的方法，有@Transactional 注解的方法的事务被忽略，不会发生回滚。见清单 5 举例代码展示。</p>
+<p><a href="https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/java/j-master-spring-transactional-use/index.html</a> 参考</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2019/01/11/15471888788864/" data-id="cjrc0tffb0014rdw16netxheh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15471784665779" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/11/15471784665779/" class="article-date">
   <time datetime="2019-01-11T03:47:46.578Z" itemprop="datePublished">2019-01-11</time>
 </a>
     
@@ -125,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jiahom.github.io/2019/01/11/Redis/" data-id="cjrbxggd80000mcw1q61syexk" class="article-share-link">Share</a>
+      <a data-url="http://jiahom.github.io/2019/01/11/15471784665779/" data-id="cjrc0tffn001crdw1vnx2va81" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,10 +410,10 @@
 
 
   
-    <article id="post-stud/Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-15470341150870" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/11/stud/Redis/" class="article-date">
-  <time datetime="2019-01-11T03:47:46.578Z" itemprop="datePublished">2019-01-11</time>
+    <a href="/2019/01/09/15470341150870/" class="article-date">
+  <time datetime="2019-01-09T11:41:55.087Z" itemprop="datePublished">2019-01-09</time>
 </a>
     
   </div>
@@ -147,58 +422,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>二进制形式存储也是存储在String类型中，目前没办法很好的做一个区分，所以有可能你存的时候是存的字节码，但是取出的时候没注意取到了String</p>
-<p>可以将对象转换为Json或者二进制形式存储进String类型的键值对中，转成Json再存储这样就可以直接在Redis中直观的看到相关的Key-Value<br>FASTJSON 简单实用说明<br>Objet To JsonString : toJsonString(适用于List等集合类型)<br>JsonString To Object : parseObject(适用于List等集合类型);</p>
-<p>2019.1.11</p>
-<p>Redis缓存更新策略  左耳听风 <a href="https://coolshell.cn/articles/17416.html" target="_blank" rel="noopener">https://coolshell.cn/articles/17416.html</a></p>
-<p>Robin更新缓存代码</p>
-<p>当数据库更新时<br><img src="media/15471784665779/15471785085304.jpg" alt=""></p>
-<p>查询时</p>
-<p><img src="media/15471784665779/15471785317798.jpg" alt=""></p>
-<p>#Redis的数据类型</p>
-<p>####1 String 可以存储字符串类型或者数字<br>常用方法 get set mget </p>
-<p>####2 Map<br>key mapkey mapvalue 类型</p>
-<p>####3 List<br>数据结构是双向链表，增删快 查找慢。</p>
-<p>####4 Set<br>数据结构是双向链表，增删速度快，查找速度慢，无重复。 Set可以做一些集合的交并补运算</p>
-<p>####5 SortSez<br>带有权重的Set</p>
-<p>###Redis的通用命令<br>keys * 返回所有key<br>key xx 返回带有xx的key<br>del key 删除某个key<br>exists key 查询某个key是否存在<br>expire key 给某个key设定过期时间<br>ttl key 查询某个key还是否设定了过期时间 没有则返回-1 有则返回-2<br>type key 查询某个key的类型</p>
-<p>#Redis的两种持久化类型<br>AOF<br>可以持久化每行命令，并且可以设定 按秒持久化，按操作次数持久化。<br>优势：不易丢失数据，即使宕机也只会丢失两次持久化之间的数据。<br>劣势：效率低，空间占用过大，当数据量过大时候影响redis性能</p>
-<p>RDB（快照）<br>另一个线程不停地把redis存储的信息写入磁盘。<br>优势：<br>恢复和迁移容易，<br>避免大量的IO（直接全部写入了，相比于AOF不用不停地读写）</p>
-<p>劣势：<br>如果定时备份的时候宕机，上次备份到这次备份之间的数据会全部丢失<br>由于是通过子进程来做同步的，如果数据量较大时，同步可能会带来服务器暂停几秒。</p>
-<p>#Redis的六种淘汰类型。</p>
-<p>####volatile-lru：<br>从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用 的数据淘汰</p>
-<p>####volatile-ttl：<br>从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数 据淘汰</p>
-<p>####volatile-random：<br>从已设置过期时间的数据集（server.db[i].expires）中任意选择数据 淘汰</p>
-<p>####allkeys-lru：<br>从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰</p>
-<p>####allkeys-random：<br>从数据集（server.db[i].dict）中任意选择数据淘汰</p>
-<p>####no-enviction（驱逐）：<br>禁止驱逐数据</p>
-<h1 id="事务和Pipeline"><a href="#事务和Pipeline" class="headerlink" title="事务和Pipeline"></a>事务和Pipeline</h1><p>参考<br>redis中multi与pipeline介绍分析<br><a href="https://blog.csdn.net/u011489043/article/details/78769428" target="_blank" rel="noopener">https://blog.csdn.net/u011489043/article/details/78769428</a><br><a href="https://juejin.im/post/5b42e025f265da0fa332d4dc" target="_blank" rel="noopener">https://juejin.im/post/5b42e025f265da0fa332d4dc</a></p>
-<p>pipeline 将所有命令在客户端做缓存，一次性发过去 不保证原子性，节省了网络io</p>
-<p>multi（事务） 将命令存储在redis端，避免了网络开销。</p>
-<p>#Redis集群<br>参考链接<br>1 <a href="https://www.cnblogs.com/linjiqin/p/7451822.html" target="_blank" rel="noopener">https://www.cnblogs.com/linjiqin/p/7451822.html</a><br>2 <a href="https://www.jianshu.com/p/14835303b07e" target="_blank" rel="noopener">https://www.jianshu.com/p/14835303b07e</a><br>最少三主三从 如果一台主节点挂了，而没有从节点被选举为主节点，则整个集群不用。</p>
-<p>集群有几种分片方式<br>1.客户端分片 简单，性能高 但是多业务使用的时候可维护性很差。<br>2.基于代理的分片 维护成本增加，并且增加了代理中间件，多了一层转发，多了一层消耗<br>3.路由查询<br>将请求发送到任意节点，接收到请求的节点会将查询请求发送到正确的节点上执行。<br>例如： Redis-cluster</p>
-<p>####Redis-cluster集群介绍<br>客户端路由.<br>Redis 集群中内置了 16384个哈希槽，当需要在 Redis 集群中放置一个 key-value 时，redis 先对 key 使用 crc16 算法算出一个结果，然后把结果对 16384 求余数，这样每个 key 都会对应一个编号在 0-16383 之间的哈希槽，redis 会根据节点数量大致均等的将哈希槽映射到不同的节点。</p>
-<p>####Redis集群投票机制<br>Redis集群中有多台redis服务器不可避免会有服务器挂掉（主从模式的时候）。redis集群服务器之间通过互相的ping-pong判断是否节点可以连接上。如果有一半以上的节点去ping一个节点的时候没有回应，集群就认为这个节点宕机了。</p>
-<p>#基于Redis做的分布式锁<br>基于SETNX命令 去SET 一个 key value<br>如果存在则返回false 如果不存在则设置成功 返回true<br>一般 key 为锁id value 为锁的过期时间 同时也需要去设定一个过期时间.<br>（当忘记系统中断，忘记设定过期时间，可能会出现死锁，所以我们每次都会不断对比value里的过期时间，所以其实每个key value分别是有两个过期时间的，一个是基于redis的，另外一个是基于value值里的）<br>去获取锁的时候，考虑到上锁者可能因为某种原因忘记设定redis的过期时间。所以会去比对设置在value上的过期时间，如果当前时间大于value上的过期时间，就去getset获取锁（getset可以同时返回目前最新的value值）<br>如果getset返回的那个value值和你上一次获得的value值相同，则说明你成功获取了锁。<br>否则说明在你获取锁的同时，有另外一个人也在争抢锁并且先你一步获取锁<br>(疑问解答：getset命令只要执行了其实就已经成功的刷新了value，但是由于你和另一个争抢者set的时间差不多，所以不会有什么影响)</p>
-<p>####核心代码<br><img src="media/15471784665779/15476272508512.jpg" alt=""></p>
-<p>Redis实现分布式锁的一些参考案例<br><a href="http://mzorro.me/2017/10/25/redis-distributed-lock/" target="_blank" rel="noopener">http://mzorro.me/2017/10/25/redis-distributed-lock/</a></p>
-<p>#Redis 常见问题</p>
-<p>####1.缓存穿透<br>查询一个 一定不存在的key时候 会造成缓存穿透，每次都会去查数据库<br>解决方法：</p>
-<ol>
-<li>布隆过滤器。 对所有可能查询的参数以hash形式存储，在控制层先进行校验，不符合则丢弃。还有最常见的则是采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的bitmap中，一个一定不存在的数据会被这个bitmap拦截掉，从而避免了对底层存储系统的查询压力。</li>
-<li>将这个空key存入redis中，设定一个短的过期时间。</li>
-</ol>
-<p>####2.缓存雪崩<br>一定时间内大量的缓存同时过期，导致大量的读库及更新缓存操作。</p>
-<p>解决方法：</p>
-<p>1.将数据设定不同的过期时间，避免同时大量过期</p>
-<p>2.可以通过缓存reload机制，预先去更新缓存，再即将发生大并发访问前手动触发加载缓存</p>
-<p>3.在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。</p>
-<p>4.做二级缓存，一级缓存失效后去读二级缓存。一级缓存的过期时间短，二级缓存的过期时间长。</p>
+        <h1 id="Plan-A"><a href="#Plan-A" class="headerlink" title="Plan A"></a>Plan A</h1><p>##模块 1<br>Java 基础<br>Java 常用工具类总结<br>Java 高级（反射，动态代理）<br>Java 数据结构 （各种 集合的使用和底层结构）<br>Java 多线程<br>各种锁，多线程状态。<br>Java JVM模型<br>JVM模型，垃圾回收相关，类的加载 双亲委派模型。</p>
+<p>##模块2<br>Tomcat 及其常用框架<br>HTTP<br>HTTPS（加密了解）<br>Spring 基本配置使用 DONE 看看AOP 和 DI（dependency inject）<br>Spring MVC DONE<br>Mybatis DONE </p>
+<p>##模块3 常用中间件 大致流程<br>Zookeeper 大致了解，加选举算法了解</p>
+<p>RPC框架 Pigeon</p>
+<p>##模块4 消息系列<br>MQ 目前选型 rocketMq（猩便利常用）<br>Rocket mq -</p>
+<p>##模块5 数据库相关<br>Mysql相关复习.</p>
+<p>Redis相关复习. DONE Redis集群问题复习</p>
+<p>##模块6 算法题</p>
+<p>数组，链表，队列，栈，树形结构。</p>
+<p>暂时对Java 排序算法复习，查找算法复习</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jiahom.github.io/2019/01/11/stud/Redis/" data-id="cjrbxggdr0001mcw1vv2oeoqp" class="article-share-link">Share</a>
+      <a data-url="http://jiahom.github.io/2019/01/09/15470341150870/" data-id="cjrc0tffa0013rdw1i2vn0p2x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-15452950529143" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/15452950529143/" class="article-date">
+  <time datetime="2018-12-20T08:37:32.915Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="类的加载"><a href="#类的加载" class="headerlink" title="类的加载"></a>类的加载</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://jiahom.github.io/2018/12/20/15452950529143/" data-id="cjrc0tff90012rdw1x0kpj7r4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -209,6 +473,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -226,7 +495,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -239,11 +508,23 @@
       <ul>
         
           <li>
-            <a href="/2019/01/11/Redis/">(no title)</a>
+            <a href="/2019/01/25/15483871708141/">(no title)</a>
           </li>
         
           <li>
-            <a href="/2019/01/11/stud/Redis/">(no title)</a>
+            <a href="/2019/01/21/15480545394523/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/15475419717626/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/14/15474349266664/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/14/15474339545317/">(no title)</a>
           </li>
         
       </ul>
