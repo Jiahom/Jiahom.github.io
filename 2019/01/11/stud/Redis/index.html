@@ -7,13 +7,21 @@
   
   <title>Xueyun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Redis二进制形式存储也是存储在String类型中，目前没办法很好的做一个区分，所以有可能你存的时候是存的字节码，但是取出的时候没注意取到了String 可以将对象转换为Json或者二进制形式存储进String类型的键值对中，转成Json再存储这样就可以直接在Redis中直观的看到相关的Key-ValueFASTJSON 简单实用说明Objet To JsonString : toJsonStr">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Xueyun">
-<meta property="og:url" content="http://jiahom.github.io/index.html">
+<meta property="og:url" content="http://jiahom.github.io/2019/01/11/stud/Redis/index.html">
 <meta property="og:site_name" content="Xueyun">
+<meta property="og:description" content="Redis二进制形式存储也是存储在String类型中，目前没办法很好的做一个区分，所以有可能你存的时候是存的字节码，但是取出的时候没注意取到了String 可以将对象转换为Json或者二进制形式存储进String类型的键值对中，转成Json再存储这样就可以直接在Redis中直观的看到相关的Key-ValueFASTJSON 简单实用说明Objet To JsonString : toJsonStr">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://jiahom.github.io/2019/01/11/stud/Redis/media/15471784665779/15471785085304.jpg">
+<meta property="og:image" content="http://jiahom.github.io/2019/01/11/stud/Redis/media/15471784665779/15471785317798.jpg">
+<meta property="og:image" content="http://jiahom.github.io/2019/01/11/stud/Redis/media/15471784665779/15476272508512.jpg">
+<meta property="og:updated_time" content="2019-01-16T08:42:51.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xueyun">
+<meta name="twitter:description" content="Redis二进制形式存储也是存储在String类型中，目前没办法很好的做一个区分，所以有可能你存的时候是存的字节码，但是取出的时候没注意取到了String 可以将对象转换为Json或者二进制形式存储进String类型的键值对中，转成Json再存储这样就可以直接在Redis中直观的看到相关的Key-ValueFASTJSON 简单实用说明Objet To JsonString : toJsonStr">
+<meta name="twitter:image" content="http://jiahom.github.io/2019/01/11/stud/Redis/media/15471784665779/15471785085304.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Xueyun" type="application/atom+xml">
   
@@ -60,82 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/11/Redis/" class="article-date">
-  <time datetime="2019-01-11T03:47:46.578Z" itemprop="datePublished">2019-01-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><p>二进制形式存储也是存储在String类型中，目前没办法很好的做一个区分，所以有可能你存的时候是存的字节码，但是取出的时候没注意取到了String</p>
-<p>可以将对象转换为Json或者二进制形式存储进String类型的键值对中，转成Json再存储这样就可以直接在Redis中直观的看到相关的Key-Value<br>FASTJSON 简单实用说明<br>Objet To JsonString : toJsonString(适用于List等集合类型)<br>JsonString To Object : parseObject(适用于List等集合类型);</p>
-<p>2019.1.11</p>
-<p>Redis缓存更新策略  左耳听风 <a href="https://coolshell.cn/articles/17416.html" target="_blank" rel="noopener">https://coolshell.cn/articles/17416.html</a></p>
-<p>Robin更新缓存代码</p>
-<p>当数据库更新时<br><img src="media/15471784665779/15471785085304.jpg" alt=""></p>
-<p>查询时</p>
-<p><img src="media/15471784665779/15471785317798.jpg" alt=""></p>
-<p>#Redis的数据类型</p>
-<p>####1 String 可以存储字符串类型或者数字<br>常用方法 get set mget </p>
-<p>####2 Map<br>key mapkey mapvalue 类型</p>
-<p>####3 List<br>数据结构是双向链表，增删快 查找慢。</p>
-<p>####4 Set<br>数据结构是双向链表，增删速度快，查找速度慢，无重复。 Set可以做一些集合的交并补运算</p>
-<p>####5 SortSez<br>带有权重的Set</p>
-<p>###Redis的通用命令<br>keys * 返回所有key<br>key xx 返回带有xx的key<br>del key 删除某个key<br>exists key 查询某个key是否存在<br>expire key 给某个key设定过期时间<br>ttl key 查询某个key还是否设定了过期时间 没有则返回-1 有则返回-2<br>type key 查询某个key的类型</p>
-<p>#Redis的两种持久化类型<br>AOF<br>可以持久化每行命令，并且可以设定 按秒持久化，按操作次数持久化。<br>优势：不易丢失数据，即使宕机也只会丢失两次持久化之间的数据。<br>劣势：效率低，空间占用过大，当数据量过大时候影响redis性能</p>
-<p>RDB（快照）<br>另一个线程不停地把redis存储的信息写入磁盘。<br>优势：<br>恢复和迁移容易，<br>避免大量的IO（直接全部写入了，相比于AOF不用不停地读写）</p>
-<p>劣势：<br>如果定时备份的时候宕机，上次备份到这次备份之间的数据会全部丢失<br>由于是通过子进程来做同步的，如果数据量较大时，同步可能会带来服务器暂停几秒。</p>
-<p>#Redis的六种淘汰类型。</p>
-<p>####volatile-lru：<br>从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用 的数据淘汰</p>
-<p>####volatile-ttl：<br>从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数 据淘汰</p>
-<p>####volatile-random：<br>从已设置过期时间的数据集（server.db[i].expires）中任意选择数据 淘汰</p>
-<p>####allkeys-lru：<br>从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰</p>
-<p>####allkeys-random：<br>从数据集（server.db[i].dict）中任意选择数据淘汰</p>
-<p>####no-enviction（驱逐）：<br>禁止驱逐数据</p>
-<h1 id="事务和Pipeline"><a href="#事务和Pipeline" class="headerlink" title="事务和Pipeline"></a>事务和Pipeline</h1><p>参考<br>redis中multi与pipeline介绍分析<br><a href="https://blog.csdn.net/u011489043/article/details/78769428" target="_blank" rel="noopener">https://blog.csdn.net/u011489043/article/details/78769428</a><br><a href="https://juejin.im/post/5b42e025f265da0fa332d4dc" target="_blank" rel="noopener">https://juejin.im/post/5b42e025f265da0fa332d4dc</a></p>
-<p>pipeline 将所有命令在客户端做缓存，一次性发过去 不保证原子性，节省了网络io</p>
-<p>multi（事务） 将命令存储在redis端，避免了网络开销。</p>
-<p>#Redis集群<br>参考链接<br>1 <a href="https://www.cnblogs.com/linjiqin/p/7451822.html" target="_blank" rel="noopener">https://www.cnblogs.com/linjiqin/p/7451822.html</a><br>2 <a href="https://www.jianshu.com/p/14835303b07e" target="_blank" rel="noopener">https://www.jianshu.com/p/14835303b07e</a><br>最少三主三从 如果一台主节点挂了，而没有从节点被选举为主节点，则整个集群不用。</p>
-<p>集群有几种分片方式<br>1.客户端分片 简单，性能高 但是多业务使用的时候可维护性很差。<br>2.基于代理的分片 维护成本增加，并且增加了代理中间件，多了一层转发，多了一层消耗<br>3.路由查询<br>将请求发送到任意节点，接收到请求的节点会将查询请求发送到正确的节点上执行。<br>例如： Redis-cluster</p>
-<p>####Redis-cluster集群介绍<br>客户端路由.<br>Redis 集群中内置了 16384个哈希槽，当需要在 Redis 集群中放置一个 key-value 时，redis 先对 key 使用 crc16 算法算出一个结果，然后把结果对 16384 求余数，这样每个 key 都会对应一个编号在 0-16383 之间的哈希槽，redis 会根据节点数量大致均等的将哈希槽映射到不同的节点。</p>
-<p>####Redis集群投票机制<br>Redis集群中有多台redis服务器不可避免会有服务器挂掉（主从模式的时候）。redis集群服务器之间通过互相的ping-pong判断是否节点可以连接上。如果有一半以上的节点去ping一个节点的时候没有回应，集群就认为这个节点宕机了。</p>
-<p>#基于Redis做的分布式锁<br>基于SETNX命令 去SET 一个 key value<br>如果存在则返回false 如果不存在则设置成功 返回true<br>一般 key 为锁id value 为锁的过期时间 同时也需要去设定一个过期时间.<br>（当忘记系统中断，忘记设定过期时间，可能会出现死锁，所以我们每次都会不断对比value里的过期时间，所以其实每个key value分别是有两个过期时间的，一个是基于redis的，另外一个是基于value值里的）<br>去获取锁的时候，考虑到上锁者可能因为某种原因忘记设定redis的过期时间。所以会去比对设置在value上的过期时间，如果当前时间大于value上的过期时间，就去getset获取锁（getset可以同时返回目前最新的value值）<br>如果getset返回的那个value值和你上一次获得的value值相同，则说明你成功获取了锁。<br>否则说明在你获取锁的同时，有另外一个人也在争抢锁并且先你一步获取锁<br>(疑问解答：getset命令只要执行了其实就已经成功的刷新了value，但是由于你和另一个争抢者set的时间差不多，所以不会有什么影响)</p>
-<p>####核心代码<br><img src="media/15471784665779/15476272508512.jpg" alt=""></p>
-<p>Redis实现分布式锁的一些参考案例<br><a href="http://mzorro.me/2017/10/25/redis-distributed-lock/" target="_blank" rel="noopener">http://mzorro.me/2017/10/25/redis-distributed-lock/</a></p>
-<p>#Redis 常见问题</p>
-<p>####1.缓存穿透<br>查询一个 一定不存在的key时候 会造成缓存穿透，每次都会去查数据库<br>解决方法：</p>
-<ol>
-<li>布隆过滤器。 对所有可能查询的参数以hash形式存储，在控制层先进行校验，不符合则丢弃。还有最常见的则是采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的bitmap中，一个一定不存在的数据会被这个bitmap拦截掉，从而避免了对底层存储系统的查询压力。</li>
-<li>将这个空key存入redis中，设定一个短的过期时间。</li>
-</ol>
-<p>####2.缓存雪崩<br>一定时间内大量的缓存同时过期，导致大量的读库及更新缓存操作。</p>
-<p>解决方法：</p>
-<p>1.将数据设定不同的过期时间，避免同时大量过期</p>
-<p>2.可以通过缓存reload机制，预先去更新缓存，再即将发生大并发访问前手动触发加载缓存</p>
-<p>3.在缓存失效后，通过加锁或者队列来控制读数据库写缓存的线程数量。比如对某个key只允许一个线程查询数据和写缓存，其他线程等待。</p>
-<p>4.做二级缓存，一级缓存失效后去读二级缓存。一级缓存的过期时间短，二级缓存的过期时间长。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://jiahom.github.io/2019/01/11/Redis/" data-id="cjrbxggd80000mcw1q61syexk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-stud/Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-stud/Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/11/stud/Redis/" class="article-date">
   <time datetime="2019-01-11T03:47:46.578Z" itemprop="datePublished">2019-01-11</time>
@@ -204,11 +137,23 @@
     </footer>
   </div>
   
-</article>
-
+    
+<nav id="article-nav">
+  
+    <a href="/2019/01/11/Redis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
 
   
-
+</article>
 
 </section>
         
